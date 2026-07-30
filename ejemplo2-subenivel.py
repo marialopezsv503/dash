@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 
-# 1. Configuración de la página (opcional)
+# 1. Configuración de la página (opcional) ahora
 st.set_page_config(page_title='Mi Dashboard', layout='wide')
 
 # 2. Cargar o generar datos (ejemplo con datos aleatorios)
@@ -40,6 +40,15 @@ with col2:
     ventas_por_region = datos_filtrados.groupby('Region')['Ventas'].sum().reset_index()
     fig_bar = px.bar(ventas_por_region, x='Region', y='Ventas', title='Ventas Totales por Región')
     st.plotly_chart(fig_bar, use_container_width=True)
+
+## Poniendo color de fondo
+st.markdown("""
+<style>
+.stApp {
+    background-color: #f3f1ac 
+}
+</style>
+""", unsafe_allow_html=True)
 
 # 7. Mostrar los datos filtrados en una tabla
 st.subheader("Datos Filtrados")
