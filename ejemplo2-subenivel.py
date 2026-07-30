@@ -41,7 +41,15 @@ with col2:
     fig_bar = px.bar(ventas_por_region, x='Region', y='Ventas', title='Ventas Totales por Región')
     st.plotly_chart(fig_bar, use_container_width=True)
 
-## Poniendo color de fondo
+
+## Poniendo color de fondo y config de barra superior
+st.set_page_config(
+    page_title="Mi Dashboard de Ventas",  
+    page_icon="📊",  
+    layout="wide",  
+    initial_sidebar_state="expanded"  
+)
+
 st.markdown("""
 <style>
 .stApp {
